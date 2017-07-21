@@ -1,0 +1,27 @@
+#: public/form/serverless.js
+msgid "Server"
+msgstr "Servidor"
+
+#: public/form/serverless.js
+msgid "Functions"
+msgstr "Funciones"
+
+#: public/form/serverless.js
+msgid "Credentials AWS"
+msgstr "Credenciales AWS"
+
+#: public/form/serverless.js
+msgid "Access Key"
+msgstr "Clave de Acceso"
+
+#: public/form/serverless.js
+msgid "Secret Key"
+msgstr "Clave Secreta"
+
+#: public/form/serverless.js
+msgid "Custom Params"
+msgstr "Parámetros personalizados"
+
+#: public/form/serverless.js
+msgid "Service Path"
+msgstr "Ruta del Servicio"
