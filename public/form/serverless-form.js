@@ -74,10 +74,12 @@
         }]
     });
 
-    var customParams = Cla.ui.textField({
+    var customParams = Cla.ui.arrayGrid({
         name: 'custom',
         fieldLabel: _('Custom Params'),
-        value: data.custom || ''
+        value: data.custom,
+        description: _('Custom commands or arguments'),
+        default_value: '.'
     });
 
     var pathService = Cla.ui.textField({

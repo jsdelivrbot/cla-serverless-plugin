@@ -3,7 +3,7 @@ var reg = require('cla/reg');
 reg.register('service.serverless.script', {
     name: 'Run a serverless script',
     icon: 'plugin/cla-serverless-plugin/icon/serverless.svg',
-    form: '/plugin/cla-serverless-plugin/form/serverless.js',
+    form: '/plugin/cla-serverless-plugin/form/serverless-form.js',
 
     handler: function(ctx, params) {
 
@@ -12,15 +12,16 @@ reg.register('service.serverless.script', {
         var reg = require('cla/reg');
         var errorsType = params.errors || 'fail';
         var command = '';
+        var customParams = params.custom;
 
         if (params.accessKey && params.secretKey) {
             command = 'export AWS_ACCESS_KEY_ID=' + params.accessKey + ';export AWS_SECRET_ACCESS_KEY=' + params.secretKey + ';';
         }
         if (params.args) {
             if (params.args != 'create') {
-                command += 'cd ' + params.path + ';serverless ' + params.args + ' ' + params.custom;
+                command += 'cd ' + params.path + ';serverless ' + params.args + ' ' + customParams.join(" ");
             } else {
-                command += 'serverless ' + params.args + ' ' + params.custom;
+                command += 'serverless ' + params.args + ' ' + customParams.join(" ");
             }
         }
 
