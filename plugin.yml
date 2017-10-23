@@ -1,7 +1,7 @@
 name: Clarive Serverless Plugin
 description: Execute a Serverless script. Associate server agent will execute the script for AWS.
 version: 1.0
-icon: https://github.com/clarive/cla-serverless-plugin/public/icon/serverless.svg
+icon: https://cdn.rawgit.com/clarive/cla-serverless-plugin/master/public/icon/serverless.svg?sanitize=true
 url: https://github.com/clarive/cla-serverless-plugin
 requires:
   - clarive_version: 6.8 <= version
