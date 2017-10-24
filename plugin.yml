@@ -1,4 +1,4 @@
-name: Clarive Serverless Plugin
+name: Serverless Plugin
 description: Execute a Serverless script. Associate server agent will execute the script for AWS.
 version: 1.0
 icon: https://cdn.rawgit.com/clarive/cla-serverless-plugin/master/public/icon/serverless.svg?sanitize=true
