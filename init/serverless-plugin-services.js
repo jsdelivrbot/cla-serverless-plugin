@@ -2,17 +2,34 @@ var reg = require('cla/reg');
 
 reg.register('service.serverless.script', {
     name: 'Run a serverless script',
-    icon: 'plugin/cla-serverless-plugin/icon/serverless.svg',
+    icon: '/plugin/cla-serverless-plugin/icon/serverless.svg',
     form: '/plugin/cla-serverless-plugin/form/serverless-form.js',
-
+    rulebook: {
+        moniker: 'serverless_script',
+        description: _('Remedyforce inbound service'),
+        required: ['server', 'args'],
+        allow: [ 'server', 'args', 'access_key', 'secret_key', 'custom_args', 'path', 'errors'],
+        mapper: {
+            'access_key':'accessKey',
+            'secret_key':'secretKey',
+            'custom_args':'custom',
+            'errors':'type'
+        },
+        examples: [{
+            serverless_script: {
+                server: 'serverless_server',
+                args: 'create',
+                custom_args: ['--template aws-nodejs', '--path myService']
+            }
+        }]
+    },
     handler: function(ctx, params) {
 
         var log = require('cla/log');
-        var ci = require('cla/ci');
         var reg = require('cla/reg');
         var errorsType = params.errors || 'fail';
         var command = '';
-        var customParams = params.custom;
+        var customParams = params.custom || [];
 
         if (params.accessKey && params.secretKey) {
             command = 'export AWS_ACCESS_KEY_ID=' + params.accessKey + ';export AWS_SECRET_ACCESS_KEY=' + params.secretKey + ';';
@@ -43,6 +60,6 @@ reg.register('service.serverless.script', {
                 rc_warn: params.warn
             }
         });
-        return output;
+        return output.output;
     }
 });
