@@ -1,6 +1,6 @@
 # Serverless Plugin
 
-<img src="https://cdn.rawgit.com/clarive/cla-serverless-plugin/master/public/icon/serverless.svg?sanitize=true" alt="Serverless Plugin" title="Serverless Plugin" width="120" height="120">
+<img src="https://cdn.jsdelivr.net/gh/clarive/cla-serverless-plugin@master/public/icon/serverless.svg?sanitize=true" alt="Serverless Plugin" title="Serverless Plugin" width="120" height="120">
 
 Execute a Serverless script. Associate server agent will execute the script for AWS.
 
